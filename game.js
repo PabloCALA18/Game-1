@@ -39,6 +39,9 @@ function draw() {
   if (sprEnemies.overlap(sprFinal)) {
     puntos()
 }
+  if(vida === 0){
+    gameOver()
+  }
 }
 
 function vidas(){
@@ -50,6 +53,12 @@ function puntos(){
  puntitos++;
  sprEnemies.position.y = -100;
  sprEnemies.position.x = random(width);
+}
+function gameOver(){
+ background(150)
+ fill(255,0,0)
+ text('GAME OVER',windowWidth/2, windowHeight/2 )
+ text('Puntuación '+ puntitos,windowWidth/2, windowHeight/2 - 100 )
 }
 function keyPressed() {
   if (keyCode == RIGHT_ARROW) {
